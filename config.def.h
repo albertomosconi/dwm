@@ -70,8 +70,6 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "st", NULL };
-static const char *fmcmd[]    = { "pcmanfm", NULL };
-static const char *wbcmd[]    = { "firefox", NULL };
 
 /* volume control */
 static const char *upvol[]	= { "amixer", "set", "Master", "3+",	NULL };
@@ -82,8 +80,9 @@ static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,		        XK_Return, spawn,          {.v = termcmd } },
-	{ MODKEY,			XK_n,	   spawn,	   {.v = fmcmd } },
-	{ MODKEY,			XK_b,	   spawn,	   {.v = wbcmd } },
+	{ MODKEY,			XK_n,	   spawn,	   SHCMD("$TERMINAL -e ranger") },
+	{ MODKEY,			XK_b,	   spawn,	   SHCMD("$BROWSER") },
+	{ MODKEY,			XK_r,	   spawn,	   SHCMD("$TERMINAL -e htop") },
 	{ MODKEY|ShiftMask,             XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
