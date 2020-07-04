@@ -82,7 +82,7 @@ static Key keys[] = {
 	{ MODKEY,		        XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,			XK_n,	   spawn,	   SHCMD("$TERMINAL -e ranger") },
 	{ MODKEY,			XK_b,	   spawn,	   SHCMD("$BROWSER") },
-	{ MODKEY,			XK_r,	   spawn,	   SHCMD("$TERMINAL -e htop") },
+	{ MODKEY,			XK_a,	   spawn,	   SHCMD("$TERMINAL -e htop") },
 	{ MODKEY|ShiftMask,             XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
@@ -134,7 +134,7 @@ static Key keys[] = {
 	TAGKEYS(                        XK_7,                      6)
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
-	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
+	{ MODKEY|ShiftMask,             XK_q,      spawn,          SHCMD("qoptions") },
 };
 
 /* button definitions */
