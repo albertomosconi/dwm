@@ -49,10 +49,10 @@ static const int resizehints = 1;    /* 1 means respect size hints in tiled resi
 #include "layouts.c"
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "[@]",      spiral },		/* fibonacci */
 	{ "[]=",      tile },    /* first entry is default */
 	{ "><>",      NULL },    /* no layout function means floating behavior */
 	{ "[M]",      monocle },
+	{ "[@]",      spiral },		/* fibonacci */
 	{ "[\\]",     dwindle },	/* like fibo but towards center */
 };
 
@@ -71,11 +71,6 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbordercolor, "-sf", selfgcolor, NULL };
 static const char *termcmd[]  = { "st", NULL };
-
-/* volume control */
-static const char *upvol[]	= { "amixer", "set", "Master", "3+",	NULL };
-static const char *downvol[]	= { "amixer", "set", "Master", "3-",	NULL };
-static const char *mutevol[]	= { "amixer", "set", "Master", "toggle",NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -110,10 +105,11 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_Return, zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY,  						XK_q,      killclient,     {0} },
-	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[1]} },
-	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[2]} },
-	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[3]} },
-	{ MODKEY,						XK_r,	   setlayout,	   {.v = &layouts[0]} },
+	{ MODKEY,			XK_f,	   togglefullscr,  {0} },
+	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
+	{ MODKEY|ShiftMask,             XK_f,      setlayout,      {.v = &layouts[1]} },
+	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
+	{ MODKEY,						XK_r,	   setlayout,	   {.v = &layouts[3]} },
 	{ MODKEY|ShiftMask,				XK_r,	   setlayout,	   {.v = &layouts[4]} },
 	{ MODKEY,                       XK_space,  setlayout,      {0} },
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
@@ -124,9 +120,9 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
 	{ MODKEY,                       XK_F5,     xrdb,           {.v = NULL } },
-	{ MODKEY,						XK_F6,	   spawn,	   	   {.v = mutevol } },
-	{ MODKEY,						XK_F7,     spawn,	   	   {.v = downvol } },
-	{ MODKEY,						XK_F8,     spawn,	   	   {.v = upvol } },
+	{ MODKEY,			XK_F6,	   spawn,   	   SHCMD("pamixer -t") },
+	{ MODKEY,			XK_F7,     spawn,   	   SHCMD("pamixer -d 5") },
+	{ MODKEY,			XK_F8,     spawn,   	   SHCMD("pamixer -i 5") },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
