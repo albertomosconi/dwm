@@ -120,9 +120,9 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
 	{ MODKEY,                       XK_F5,     xrdb,           {.v = NULL } },
-	{ MODKEY,			XK_F6,	   spawn,   	   SHCMD("pamixer -t") },
-	{ MODKEY,			XK_F7,     spawn,   	   SHCMD("pamixer -d 5") },
-	{ MODKEY,			XK_F8,     spawn,   	   SHCMD("pamixer -i 5") },
+	{ MODKEY,			XK_F6,	   spawn,   	   SHCMD("pamixer -t; kill -44 $(pidof dwmblocks)") },
+	{ MODKEY,			XK_F7,     spawn,   	   SHCMD("pamixer --allow-boost -d 5; kill -44 $(pidof dwmblocks)") },
+	{ MODKEY,			XK_F8,     spawn,   	   SHCMD("pamixer --allow-boost -i 5; kill -44 $(pidof dwmblocks)") },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
