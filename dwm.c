@@ -1328,9 +1328,9 @@ loadxrdb()
       if (xrdb != NULL) {
         XRDB_LOAD_COLOR("dwm.color0", normbordercolor);
         XRDB_LOAD_COLOR("dwm.color0", normbgcolor);
-        XRDB_LOAD_COLOR("dwm.color5", normfgcolor);
-        XRDB_LOAD_COLOR("dwm.color5", selbordercolor);
-        XRDB_LOAD_COLOR("dwm.color5", selbgcolor);
+        XRDB_LOAD_COLOR("dwm.color1", normfgcolor);
+        XRDB_LOAD_COLOR("dwm.color1", selbordercolor);
+        XRDB_LOAD_COLOR("dwm.color1", selbgcolor);
         XRDB_LOAD_COLOR("dwm.color0", selfgcolor);
       }
     }
