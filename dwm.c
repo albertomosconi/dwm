@@ -2737,8 +2737,8 @@ main(int argc, char *argv[])
 	if (!(dpy = XOpenDisplay(NULL)))
 		die("dwm: cannot open display");
 	checkotherwm();
-        XrmInitialize();
-        loadxrdb();
+    XrmInitialize();
+    loadxrdb();
 	setup();
 #ifdef __OpenBSD__
 	if (pledge("stdio rpath proc exec", NULL) == -1)
