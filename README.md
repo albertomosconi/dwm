@@ -17,6 +17,9 @@ dwm draws a small customizable border around windows to indicate the focus state
 - [Pertag](https://dwm.suckless.org/patches/pertag/ "pertag"): More general approach to taglayouts patch. This patch keeps layout, mwfact, barpos and nmaster per tag.
 - [Fibonacci](https://dwm.suckless.org/patches/fibonacci/ "fibonacci"): This patch adds two new layouts (spiral and dwindle) that arranges all windows in Fibonacci tiles: The first window uses half the screen, the second the half of the remainder, etc.
 - [Systray](https://dwm.suckless.org/patches/systray/ "systray"): A simple system tray implementation. Multi-monitor is also supported. The tray follows the selected monitor.
+- [Statuscmd](https://dwm.suckless.org/patches/statuscmd "statuscmd"): This patch adds the ability to execute shell commands based on the mouse button and position when clicking the status bar.
+This also includes the integration with [my build](https://www.github.com/albertomosconi/dwmblocks "albertomosconi's dwmblocks") of [dwmblocks](https://github.com/torrinfail/dwmblocks "dwmblocks").
+- [Xrdb](https://dwm.suckless.org/patches/xrdb "xrdb"): Allows dwm to read colors from xrdb (.Xresources) at run time. To see my dotfiles click [here](https://www.github.com/albertomosconi/dotfiles "dotfiles").
 
 ## Installation
 Clone this repository in whatever folder you want to keep the source code in, then go in the cloned directory and build the package:
