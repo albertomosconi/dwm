@@ -29,3 +29,7 @@ Clone this repository in whatever folder you want to keep the source code in, th
   cd dwm
   sudo make clean install
 ```
+
+## Screenshots
+![busy](https://raw.githubusercontent.com/albertomosconi/dwm/master/screens/busy.jpg "busy")
+![clean](https://raw.githubusercontent.com/albertomosconi/dwm/master/screens/clean.jpg "clean")
