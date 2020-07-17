@@ -138,7 +138,7 @@ static Key keys[] = {
 	{ MODKEY,			XK_F6,	   spawn,   	   SHCMD("pamixer -t; kill -44 $(pidof dwmblocks)") },
 	{ MODKEY,			XK_F7,     spawn,   	   SHCMD("pamixer --allow-boost -d 5; kill -44 $(pidof dwmblocks)") },
 	{ MODKEY,			XK_F8,     spawn,   	   SHCMD("pamixer --allow-boost -i 5; kill -44 $(pidof dwmblocks)") },
-    { MODKEY,                       XK_Print,  spawn,          SHCMD("scrot --quality 100 -e 'mv $f $${HOME}/media/images/screenshots'") },
+    { MODKEY,                       XK_Print,  spawn,          SHCMD("scrot --quality 100 -e 'mv $f $${HOME}/media/images/screenshots' && notify-send -u low 'Screenshot taken'") },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
