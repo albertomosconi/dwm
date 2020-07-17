@@ -14,9 +14,9 @@ static const unsigned int gappov    = 12;       /* vert outer gap between window
 static const int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
 static const int showbar            = 1;        /* 0 means no bar */ 
 static const int topbar             = 1;        /* 0 means bottom bar */ 
-static const char *fonts[]          = { "firamono:size=9","FontAwesome:pixelsize=12:antialias=true:autohint=true" };
+static const char *fonts[]          = { "monospace:size=9","FontAwesome:pixelsize=12:antialias=true:autohint=true" };
 static const int swallowfloating    = 0;        /* 1 means swallow floating windows by default */
-static const char dmenufont[]       = "firamono:size=9";
+static const char dmenufont[]       = "monospace:size=9";
 static char normbgcolor[]           = "#222222";
 static char normbordercolor[]       = "#444444";
 static char normfgcolor[]           = "#bbbbbb";
@@ -138,6 +138,7 @@ static Key keys[] = {
 	{ MODKEY,			XK_F6,	   spawn,   	   SHCMD("pamixer -t; kill -44 $(pidof dwmblocks)") },
 	{ MODKEY,			XK_F7,     spawn,   	   SHCMD("pamixer --allow-boost -d 5; kill -44 $(pidof dwmblocks)") },
 	{ MODKEY,			XK_F8,     spawn,   	   SHCMD("pamixer --allow-boost -i 5; kill -44 $(pidof dwmblocks)") },
+    { MODKEY,                       XK_Print,  spawn,          SHCMD("scrot --quality 100 -e 'mv $f $${HOME}/media/images/screenshots'") },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
